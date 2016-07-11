@@ -1,0 +1,29 @@
+{
+  "name": "fullstring",
+  "version": "1.0.0",
+  "description": "fullstring,补全字符串",
+  "main": "app.js",
+  "scripts": {
+    "test": "node test/demo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gavinning/fullstring.git"
+  },
+  "keywords": [
+    "fullstring",
+    "full",
+    "string",
+    "补全字符串"
+  ],
+  "author": "gavinning",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gavinning/fullstring/issues"
+  },
+  "homepage": "https://github.com/gavinning/fullstring#readme",
+  "dependencies": {
+    "aimee-extend": "^1.0.1",
+    "aimee-is": "^1.1.0"
+  }
+}
