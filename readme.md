@@ -109,4 +109,7 @@ fstring(array, options)
 
 * ``Options``  
   ``Options.type`` ``type: String`` 用于补全的字符串，默认为``-``  
-  ``Options.size`` ``type: Number`` 补全位数，默认为``2``
+  ``Options.size`` ``type: Number`` 补全位数，默认为``2``  
+  ``Options.key `` ``type: String`` 当数组元素为对象时，需指定此参数以确定需格式化的值  
+  ``Options.split`` ``type: String`` 当数组元素字符串需要分段补全时，需指定分割符  
+  ``Options.index`` ``type: Number`` 当数组元素为数组时，需指定需要补全的子数组元素索引  
