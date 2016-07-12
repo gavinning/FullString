@@ -1,6 +1,6 @@
 {
   "name": "fullstring",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "fullstring,补全字符串",
   "main": "app.js",
   "scripts": {

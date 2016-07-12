@@ -10,7 +10,13 @@ function fstring(arr, options){
         options.type = type;
     }
 
-    options = extend({ type: '-', size: 2, index: 0, split: ',' }, options)
+    options = extend({
+        type: '-',
+        size: 2,
+        index: 0,
+        split: ',',
+        splitTo: false,
+    }, options)
 
     return is.function(fstring.usermake) ?
         fstring.usermake(arr, options) :
@@ -53,7 +59,6 @@ function make(array, options){
 function makestring(array, options){
     var length, max;
 
-
     // Options.split &&
     // 数组中每一个元素都包含Options.split
     if(options.split && array.every(function(item){ return item.indexOf(options.split) > 0 })){
@@ -64,11 +69,16 @@ function makestring(array, options){
         max = getMax(length, options.size)
 
         return array.map(function(item){
-            var arr = item.split(options.split);
+            var obj, arr;
+
+            // 分割字符串
+            arr = item.split(options.split);
+            // 补全字符串片段
             arr[options.index] += getType(max-arr[options.index].length, options.type);
-            return is.function(fstring.onchange) ?
-                fstring.onchange(arr.join(options.split)):
-                arr.join(options.split);
+            // 恢复字符串分割前状态
+            options.splitTo ? obj = arr.join(options.splitTo) : obj = arr.join(options.split)
+            // 返回指定的补全后的字符串
+            return is.function(fstring.onchange) ? fstring.onchange(obj) : obj;
         })
     }
 
